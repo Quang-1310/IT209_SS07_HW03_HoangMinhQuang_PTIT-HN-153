@@ -1,0 +1,13 @@
+[Unit]
+Description=Spring Boot Application Service
+After=network.target
+
+[Service]
+Type=simple
+User=spring-runner
+ExecStart=/usr/bin/java -jar /opt/spring-app/app.jar
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
